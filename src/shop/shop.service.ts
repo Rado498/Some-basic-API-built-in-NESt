@@ -8,8 +8,8 @@ import { ShopItemDetails } from "./shop-item-details.entity";
 
 @Injectable()
 export class ShopService {
-  constructor(@Inject(forwardRef(() => BasketService)) private basketService: BasketService, private dataSource: DataSource //zamiast injectować po prostu nazwe serwisu,
-              //trzeba dopisac forwardRef(() => <Nazwa> ) żeby zapobiec błędowi cicrucal dependencies
+  constructor(@Inject(forwardRef(() => BasketService)) private basketService: BasketService, private dataSource: DataSource
+
   ) {
   }
 
@@ -24,7 +24,7 @@ export class ShopService {
   }
 
   async hasProduct(name: string): Promise<boolean> {
-    return (await this.getProducts()).some(item => item.name === name);        //metoda tablicowa some swraca true jeśli spełnia warunek
+    return (await this.getProducts()).some(item => item.name === name);
   }
 
   async getPriceOfProduct(name: string): Promise<number> {
@@ -34,7 +34,7 @@ export class ShopService {
   }
 
   async getOneProduct(id: string): Promise<GetOneProductResponse> {
-    return await ShopItem.findOneOrFail({ where: { id } }); //findOneOrfail bezpieczne pobieranie pojedynczego elementu
+    return await ShopItem.findOneOrFail({ where: { id } });
   }
 
   async removeProduct(id: string) {

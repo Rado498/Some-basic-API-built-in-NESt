@@ -14,7 +14,7 @@ import { ShopItemDetails } from "./shop-item-details.entity";
 import { ShopSet } from "./shop-set.entity";
 
 @Entity()
-export class ShopItem extends BaseEntity { //extends BaseEntity - inteligentna encja/entity korzystająca z active record
+export class ShopItem extends BaseEntity {
 
 
   @PrimaryGeneratedColumn("uuid")

@@ -13,7 +13,7 @@ export class BasketService {
   private items: AddProductDto[] = [];
 
   constructor(
-    @Inject(forwardRef(() => ShopService)) private shopService: ShopService  //Pamiętaj aby service z innego pliku działał, to trzeba go najpierw zaimportować!!
+    @Inject(forwardRef(() => ShopService)) private shopService: ShopService
   ) {
   }
 
@@ -76,7 +76,7 @@ const {count,name, id} = item
     return (await Promise.all(
       this.items
 
-        .map(async item => (await this.shopService.getPriceOfProduct(item.name)) * item.count * 1.23) //zmieniam produkt w samą cene
+        .map(async item => (await this.shopService.getPriceOfProduct(item.name)) * item.count * 1.23)
     ))
       .reduce((prev, curr) => prev + curr, 0);
 
