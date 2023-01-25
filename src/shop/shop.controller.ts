@@ -17,7 +17,7 @@ export class ShopController {
   }
   @Get('/find/:searchTerm')
   testFindItem(
-    @Param('searchTerm') searchTerm: string //searchTerm daję możliwość wyszukiwania danych np. opisu w url
+    @Param('searchTerm') searchTerm: string
   ): Promise<GetListOfProductsResponse>{
     return this.shopService.findProducts(searchTerm);
 

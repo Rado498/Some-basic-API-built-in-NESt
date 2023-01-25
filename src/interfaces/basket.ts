@@ -9,7 +9,7 @@ export type AddProductToBasketResponse = {
 export interface RemoveProductFromBasketResponse {
 isSuccess: boolean
 }
-export type ListProductsInBasketResponse = AddProductDto[] // typ na podstawie klasy
+export type ListProductsInBasketResponse = AddProductDto[]
 
 export type GetTotalPriceResponse = number | {
   isSuccess: false;
